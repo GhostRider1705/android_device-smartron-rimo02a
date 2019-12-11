@@ -17,15 +17,19 @@
 # Inherit device configuration
 $(call inherit-product, device/smartron/rimo02a/full_rimo02a.mk)
 
-# Inherit some common Superior OS stuff.
+# Inherit some common PixelExperience OS stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
+# Boot animation
+TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_GAPPS_ARCH := arm64
 TARGET_BOOT_ANIMATION_RES := 1080
-$(call inherit-product, vendor/superior/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := rimo02a
-PRODUCT_NAME := superior_rimo02a
+PRODUCT_NAME := aosp_rimo02a
 PRODUCT_BRAND := smartron
-TARGET DEVICE := rimo02a
 PRODUCT_MANUFACTURER := smartron
 
 PRODUCT_GMS_CLIENTID_BASE := android-smartron
